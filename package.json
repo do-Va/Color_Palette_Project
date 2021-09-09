@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "@material-ui/core": "^4.9.10",
-    "@material-ui/lab": "^4.0.0-alpha.49",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.49",
     "@material-ui/utils": "^4.11.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
@@ -15,6 +15,7 @@
     "react": "^16.14.0",
     "react-copy-to-clipboard": "^5.0.4",
     "react-dom": "^16.13.1",
+    "react-router-dom": "^5.3.0",
     "react-scripts": "3.4.1"
   },
   "scripts": {
