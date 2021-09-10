@@ -6,8 +6,8 @@ import { CallMissedSharp } from '@material-ui/icons';
 
 const styles = {
   root: {
-    backgroundColor: 'blue',
-    height: '100%',
+    marginTop: '1rem',
+    height: '100vh',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
@@ -15,15 +15,16 @@ const styles = {
   container: {
     width: '50%',
     display: 'flex',
+    alignItems: 'flex-start',
     flexDirection: 'column',
     flexWrap: 'wrap',
-    border: '1px solid #fff',
   },
   nav: {
     display: 'flex',
     width: '100%',
+    height: '50px',
     justifyContent: 'space-between',
-    color: '#fff',
+    alignItems: 'center',
   },
   palettes: {
     boxSizing: 'border-box',
