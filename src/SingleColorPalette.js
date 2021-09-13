@@ -41,7 +41,7 @@ export default class h1 extends Component {
         key={color.name}
         name={color.name}
         background={color[format]}
-        showLink={false}
+        showingFullPalette={false}
       />
     ));
     return (
