@@ -29,7 +29,6 @@
   outline: none;
   text-align: center;
   background: rgba(255, 255, 255, 0.3);
-  text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   font-size: 1rem;
@@ -55,15 +54,26 @@
   padding: 10px;
   left: 0;
   bottom: 0;
-  color: black;
+  color: #000;
   letter-spacing: 1px;
   text-transform: uppercase;
   font-size: 12px;
 }
 
+.light-text {
+  color: #fff;
+}
+
+.ColorBox .dark-text {
+  color: #222;
+}
+
+.ColorBox .dark-bg {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 .see-more {
   background: rgba(255, 255, 255, 0.3);
-  text-shadow: 0.1rem 0.1rem 0 rgba(0, 0, 0, 0.5);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   position: absolute;
