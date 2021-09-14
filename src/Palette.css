@@ -1,13 +1,13 @@
-.Palette {
+/* .Palette {
   height: 100vh;
   overflow: hidden;
   padding-bottom: 0.8rem;
-}
+} */
 
-.Palette-colors {
+/* .Palette-colors {
   height: 90%;
   overflow: hidden;
-}
+} */
 
 .Palette-footer {
   background: #fff;
