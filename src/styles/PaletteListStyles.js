@@ -20,6 +20,7 @@ export default {
     height: '50px',
     justifyContent: 'space-between',
     alignItems: 'center',
+
     '& a': {
       textDecoration: 'none',
       background: '#eee',
@@ -27,9 +28,11 @@ export default {
       borderRadius: '.3rem',
       transition: 'all .4s ease',
     },
+
     '& a:hover': {
       background: '#ddd',
     },
+
     '& a, a:active, a:visited,': {
       color: '#222',
     },
