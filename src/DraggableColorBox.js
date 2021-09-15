@@ -36,10 +36,10 @@ const styles = {
 };
 
 const DraggableColorBox = SortableElement(props => {
-  const { classes, color, id, name, removeColor } = props;
+  const { classes, color, name, removeColor } = props;
 
   const handleClick = () => {
-    removeColor(id);
+    removeColor(name);
   };
 
   return (
