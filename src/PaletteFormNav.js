@@ -11,6 +11,17 @@ import { Button } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 class PaletteFormNav extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      newPaletteName: '',
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
   componentDidMount() {
     ValidatorForm.addValidationRule('isPaletteNameUnique', value =>
       this.props.palettes.every(
@@ -19,9 +30,19 @@ class PaletteFormNav extends Component {
     );
   }
 
+  handleChange(evt) {
+    this.setState({
+      newPaletteName: evt.target.value,
+    });
+  }
+
+  handleSubmit() {
+    this.props.addNewPalette(this.state.newPaletteName);
+  }
+
   render() {
-    const { classes, open, handleChange, handleSubmit, newPaletteName } =
-      this.props;
+    const { newPaletteName } = this.state;
+    const { classes, open } = this.props;
 
     return (
       <div>
@@ -45,12 +66,11 @@ class PaletteFormNav extends Component {
             <Typography variant="h6" color="inherit" noWrap>
               Persistent drawer
             </Typography>
-            <ValidatorForm onSubmit={handleSubmit}>
+            <ValidatorForm onSubmit={this.handleSubmit}>
               <TextValidator
                 label="Palette Name"
                 value={newPaletteName}
-                name="newPaletteName"
-                onChange={handleChange}
+                onChange={this.handleChange}
                 validators={['required', 'isPaletteNameUnique']}
                 errorMessages={['Enter Palette Name', 'Name already used!']}
               />
