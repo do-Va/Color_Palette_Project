@@ -91,6 +91,7 @@ class NewPaletteForm extends Component {
     this.addNewColor = this.addNewColor.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.removeColor = this.removeColor.bind(this);
   }
 
   componentDidMount() {
@@ -111,6 +112,17 @@ class NewPaletteForm extends Component {
     );
   }
 
+  randomUuId() {
+    let newId = Math.random().toString(15).substring(2).split('');
+
+    for (let i = 1; i < newId.length; i++) {
+      if (i % 4 === 0) {
+        newId.splice(i, 0, '-');
+      }
+    }
+    return newId.join('');
+  }
+
   handleDrawerOpen = () => {
     this.setState({ open: true });
   };
@@ -126,7 +138,10 @@ class NewPaletteForm extends Component {
     const newColor = {
       color: this.state.currentColor,
       name: this.state.newColorName,
+      id: this.randomUuId(),
     };
+
+    console.log(newColor);
 
     this.setState({
       colors: [...this.state.colors, newColor],
@@ -149,6 +164,14 @@ class NewPaletteForm extends Component {
     };
     this.props.savePalette(newPalette);
     this.props.history.push('/');
+  }
+
+  removeColor(id) {
+    const newColor = this.state.colors.filter(color => color.id !== id);
+
+    this.setState({
+      colors: newColor,
+    });
   }
 
   render() {
@@ -248,7 +271,13 @@ class NewPaletteForm extends Component {
         >
           <div className={classes.drawerHeader} />
           {this.state.colors.map(color => (
-            <DraggableColorBox color={color.color} name={color.name} />
+            <DraggableColorBox
+              key={color.id}
+              color={color.color}
+              name={color.name}
+              removeColor={this.removeColor}
+              id={color.id}
+            />
           ))}
         </main>
       </div>
