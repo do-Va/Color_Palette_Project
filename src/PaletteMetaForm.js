@@ -6,6 +6,8 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { Picker } from 'emoji-mart';
+import 'emoji-mart/css/emoji-mart.css';
 
 class PaletteMetaForm extends Component {
   constructor(props) {
@@ -17,7 +19,6 @@ class PaletteMetaForm extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleClose = this.handleClose.bind(this);
   }
 
   componentDidMount() {
@@ -38,20 +39,12 @@ class PaletteMetaForm extends Component {
     this.props.addNewPalette(this.state.newPaletteName);
   }
 
-  handleClose = () => {
-    this.props.closeForm();
-  };
-
   render() {
     const { newPaletteName } = this.state;
-    const { open } = this.props;
+    const { hideForm } = this.props;
 
     return (
-      <Dialog
-        open={open}
-        onClose={this.handleClose}
-        aria-labelledby="form-dialog-title"
-      >
+      <Dialog open aria-labelledby="form-dialog-title" onClose={hideForm}>
         <DialogTitle id="form-dialog-title">Choose a Palette Name</DialogTitle>
         <ValidatorForm onSubmit={this.handleSubmit}>
           <DialogContent>
@@ -59,6 +52,7 @@ class PaletteMetaForm extends Component {
               Please enter a nam for your new beautiful palette. Make sure it's
               unique!
             </DialogContentText>
+            <Picker />
 
             <TextValidator
               label="Palette Name"
@@ -71,7 +65,7 @@ class PaletteMetaForm extends Component {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={this.handleClose} color="primary">
+            <Button onClick={hideForm} color="primary">
               Cancel
             </Button>
             <Button variant="contained" color="primary" type="submit">

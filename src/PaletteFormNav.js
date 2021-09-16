@@ -58,20 +58,19 @@ class PaletteFormNav extends Component {
     super(props);
 
     this.state = {
-      open: false,
       formShowing: false,
     };
 
     this.showForm = this.showForm.bind(this);
-    this.closeForm = this.closeForm.bind(this);
+    this.hideForm = this.hideForm.bind(this);
   }
 
   showForm() {
-    this.setState({ formShowing: true, open: true });
+    this.setState({ formShowing: true });
   }
 
-  closeForm() {
-    this.setState({ formShowing: false, open: false });
+  hideForm() {
+    this.setState({ formShowing: false });
   }
 
   render() {
@@ -124,8 +123,7 @@ class PaletteFormNav extends Component {
           <PaletteMetaForm
             addNewPalette={addNewPalette}
             palettes={palettes}
-            closeForm={this.closeForm}
-            open={this.state.open}
+            hideForm={this.hideForm}
           />
         )}
       </div>
