@@ -50,6 +50,7 @@ class PaletteMetaForm extends Component {
     };
 
     this.props.addNewPalette(newPalette);
+    this.setState({ stage: '' });
   }
 
   render() {
