@@ -30,6 +30,7 @@ class PaletteList extends Component {
             {palettes.map(palette => (
               <MiniPalette
                 {...palette}
+                key={palette.id}
                 goToPalette={this.goToPalette}
                 handleDelete={deletePalette}
               />
