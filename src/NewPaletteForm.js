@@ -108,12 +108,9 @@ class NewPaletteForm extends Component {
     this.setState({ colors: [...this.state.colors, randomColor] });
   }
 
-  addNewPalette(newPaletteName) {
-    const newPalette = {
-      paletteName: newPaletteName,
-      id: newPaletteName.toLowerCase().replace(/ /g, '-'),
-      colors: this.state.colors,
-    };
+  addNewPalette(newPalette) {
+    newPalette.id = newPalette.paletteName.toLowerCase().replace(/ /g, '-');
+    newPalette.colors = this.state.colors;
     this.props.savePalette(newPalette);
     this.props.history.push('/');
   }
@@ -141,7 +138,7 @@ class NewPaletteForm extends Component {
   render() {
     const { classes, maxColors, palettes } = this.props;
     const { open, colors } = this.state;
-    const paletteIsFull = colors.length === maxColors;
+    const paletteIsFull = colors.length >= maxColors;
 
     return (
       <div className={classes.root}>
