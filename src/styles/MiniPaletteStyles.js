@@ -5,8 +5,9 @@ export default {
     borderRadius: '5px',
     padding: '0.5rem',
     position: 'relative',
-    '&:hover': {
-      cursor: 'pointer',
+    cursor: 'pointer',
+    '&:hover > *': {
+      opacity: '1',
     },
   },
   colors: {
@@ -37,5 +38,20 @@ export default {
     margin: '0 auto',
     position: 'relative',
     marginBottom: '-3.5px',
+  },
+  delete: {
+    backgroundColor: '#eb3d30',
+    position: 'absolute',
+    top: '0',
+    right: '0',
+    padding: '5px',
+    zIndex: '1',
+    opacity: '0',
+    transition: 'all .4s ease-in-out',
+  },
+  deleteIcon: {
+    color: '#fff',
+    width: '20px',
+    height: '20px',
   },
 };
