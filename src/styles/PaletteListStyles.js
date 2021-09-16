@@ -5,9 +5,9 @@ export default {
     '.fade-exit': {
       opacity: 1,
     },
-    'fade-exit-active': {
+    '.fade-exit-active': {
       opacity: 0,
-      transition: 'opacity 500ms ease-out',
+      transition: 'opacity .4s ease-out',
     },
   },
   PaletteList: {
