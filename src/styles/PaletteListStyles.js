@@ -3,11 +3,15 @@ import sizes from './sizes';
 export default {
   PaletteList: {
     marginTop: '1rem',
-    height: '100vh',
+    height: '100%',
     display: 'flex',
     alignItems: 'flex-start',
     justifyContent: 'center',
     color: '#222',
+  },
+  heading: {
+    fontSize: '2rem',
+    color: '#444',
   },
   container: {
     width: '50%',
