@@ -39,7 +39,8 @@ export default {
     position: 'relative',
     marginBottom: '-3.5px',
   },
-  delete: {
+  deleteIcon: {
+    boxSizing: 'content-box',
     backgroundColor: '#eb3d30',
     position: 'absolute',
     top: '0',
@@ -48,8 +49,6 @@ export default {
     zIndex: '1',
     opacity: '0',
     transition: 'all .4s ease-in-out',
-  },
-  deleteIcon: {
     color: '#fff',
     width: '20px',
     height: '20px',
