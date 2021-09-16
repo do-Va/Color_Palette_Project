@@ -1,3 +1,5 @@
+import sizes from './sizes';
+
 export default {
   Navbar: {
     display: 'flex',
@@ -19,6 +21,9 @@ export default {
       textDecoration: 'none',
       color: '#222',
     },
+    [sizes.down('xs')]: {
+      display: 'none',
+    },
   },
 
   slider: {
@@ -36,6 +41,9 @@ export default {
         height: '13px',
         marginTop: '-3px',
       },
+    [sizes.down('xs')]: {
+      width: '150px',
+    },
 
     '& .rc-slider-track': {
       backgroundColor: 'transparent',
